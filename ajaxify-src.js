@@ -17,7 +17,7 @@ var AJAXifyX = new Class({
 		
 		this.historyKey = '';
 		this.history = HistoryManager.register(
-            this.historyKey,
+		this.historyKey,
 			['home'],
 			function(values){
 				//this.to(parseInt(values[0]));
@@ -28,13 +28,13 @@ var AJAXifyX = new Class({
 			this.historyKey + '\\((\\w+)\\)'
 		);
 
-        this.addEvent('request', this.onRequest.bind(this), true);
-        this.addEvent('complete', this.onComplete.bind(this), true);
+        	this.addEvent('request', this.onRequest.bind(this), true);
+        	this.addEvent('complete', this.onComplete.bind(this), true);
 	},
 	sender: null,
 	loading: $empty,
 		
-    morphAnchor: function (el)
+	morphAnchor: function (el)
 	{
 		var href = el.href.split("?");
 		
@@ -47,7 +47,7 @@ var AJAXifyX = new Class({
 		el.name = el.queryString;
 		
 		el.addEvent('click', function (event)
-        {
+        	{
 			AJAXify.sender = this;
 			AJAXify.get(this.query);
 			
